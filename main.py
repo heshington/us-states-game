@@ -11,10 +11,8 @@ turtle.shape(image)
 
 data = pandas.read_csv("50_states.csv")
 
-country_ref = {}
 x_cord = 0
 y_cord = 0
-
 score = 0
 user_gussed_states = []
 while score < 50:
@@ -33,10 +31,11 @@ while score < 50:
         # add that state to gussed states so user cant score again
         user_gussed_states.append(user_guessed_state)
 
-        state_turtle = turtle
+        state_turtle = turtle.Turtle()
+        state_turtle.hideturtle()
         state_turtle.penup()
-        state_turtle.setposition(x_cord, y_cord)
-        print(x_cord, y_cord)
+        state_turtle.goto(x_cord, y_cord)
+
         state_turtle.write(f"{answer_state}")
 
 turtle.mainloop()
